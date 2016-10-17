@@ -70,7 +70,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				
-				<section><br/><br/><h2>Multi-Dimensional </br> Gated Recurrent Units </br>for the Segmentation </br>of Biomedical 3D-Data</h2>
+				<section><br/><br/><h2>Multi-Dimensional Gated Recurrent Units </br>for the Segmentation of Biomedical 3D-Data</h2>
 				<p>Simon Andermatt<sup>1</sup>, Simon Pezold<sup>1</sup>, and Philippe Cattin<sup>1</sup></p><p style="font-size: 80%">Medical Image Analysis Center</p>
 				<p style="font-size:80%"><sup>1</sup>2nd Workshop on Deep Learning in Medical Image Analysis in Conjunction with MICCAI 2016</p></section>
 				<section data-markdown>
@@ -146,9 +146,21 @@ blabla
 
 					<script>
 						document.getElementById('svgObject').addEventListener('load',function(){
+							
 						var a = document.getElementById("svgObject");
+						
 						console.log(a);
 						var svgDoc = a.contentDocument;
+						$(svgDoc).find("#text15363 tspan tspan:eq(4)")[0].innerHTML = "   "+$(svgDoc).find("#text15363 tspan tspan:eq(4)")[0].innerHTML;
+						$(svgDoc).find("#text15363 tspan tspan:eq(0)")[0].innerHTML = "   "+$(svgDoc).find("#text15363 tspan tspan:eq(0)")[0].innerHTML;
+						$(svgDoc).find("#text15363 tspan tspan:eq(6)")[0].innerHTML = "   "+$(svgDoc).find("#text15363 tspan tspan:eq(6)")[0].innerHTML;
+						$(svgDoc).find("#text15363 tspan tspan:eq(2)")[0].innerHTML = "   "+$(svgDoc).find("#text15363 tspan tspan:eq(2)")[0].innerHTML;
+						
+						$(svgDoc).find("#tspan15391")[0].innerHTML = "   | a | b | c | d | e | f | g | h | i | j | k | l | m | n |";
+						$(svgDoc).find("#tspan15397")[0].innerHTML = "   "+$(svgDoc).find("#tspan15397")[0].innerHTML;
+						$(svgDoc).find("#tspan15403")[0].innerHTML = "   | o | p | q | r | s | t | u | v | w | x | y | z |   | ";
+						$(svgDoc).find("#tspan15409")[0].innerHTML = "   "+$(svgDoc).find("#tspan15409")[0].innerHTML;
+							
 						$(svgDoc).find("#text15387 tspan tspan").css({"font-family":"monospace"});
 						$(svgDoc).find("#text15363 tspan tspan").css({"font-family":"monospace"});
 						//console.log(svgDoc);
@@ -185,7 +197,7 @@ blabla
 							}
 							//change input encoding
 							loc = inputtext.charCodeAt(iteration)-97;
-							var text = "";
+							var text = "   ";
 							var found = 0;
 							for (i = 0; i < 14; i++) {
 								if (i == loc) {
@@ -195,7 +207,7 @@ blabla
 									text+= "  0";
 								}
 							}
-							var text2 = "";
+							var text2 = "   ";
 							for (i = 14; i < 26; i++) {
 								if (i == loc) {
 									found=1;
@@ -213,7 +225,8 @@ blabla
 							tempitemp = svgDoc;
 							$(svgDoc).find("#text15363 tspan tspan:eq(2)")[0].textContent = text;
 							$(svgDoc).find("#text15363 tspan tspan:eq(6)")[0].textContent = text2;
-							
+
+
 							
 							
 							//change output encoding
@@ -239,7 +252,7 @@ blabla
 							   	array[26]+=0.5;
 
 							}
-							text = "";
+							text = "   ";
 							found = 0;
 							$(svgDoc).find("#text15387 tspan tspan:eq(2)")[0].textContent = "";
 							for (i = 0; i < 14; i++) {
@@ -249,7 +262,7 @@ blabla
 									text += " ." + String(Math.round(array[i]*10))+String(Math.round(array[i]*100)%10);
 								}
 							}
-							text2 = "";
+							text2 = "   ";
 							for (i = 14; i < 27; i++) {
 								if (array[i] >= 0.5) {
 									text2+= "<tspan style='fill:#00ff00;'> ." + String(Math.round(array[i]*10))+String(Math.round(array[i]*100)%10) + "</tspan>";
@@ -257,11 +270,11 @@ blabla
 									text2+= " ." + String(Math.round(array[i]*10))+String(Math.round(array[i]*100)%10);
 								}
 							}
-							$(svgDoc).find("#tspan15391")[0].textContent = "| a | b | c | d | e | f | g | h | i | j | k | l | m | n |";
+							$(svgDoc).find("#tspan15391")[0].textContent = "   | a | b | c | d | e | f | g | h | i | j | k | l | m | n |";
 							$(svgDoc).find("#tspan15391").css({"font-family":"monospace"});
 							$(svgDoc).find("#tspan15397")[0].innerHTML =text;
 							$(svgDoc).find("#tspan15397").css({"font-family":"monospace"});
-							$(svgDoc).find("#tspan15403")[0].textContent = "| o | p | q | r | s | t | u | v | w | x | y | z |   | ";
+							$(svgDoc).find("#tspan15403")[0].textContent = "   | o | p | q | r | s | t | u | v | w | x | y | z |   | ";
 							$(svgDoc).find("#tspan15403").css({"font-family":"monospace"});
 							$(svgDoc).find("#tspan15409")[0].innerHTML = text2;
 							$(svgDoc).find("#tspan15409").css({"font-family":"monospace"});
