@@ -1,0 +1,81 @@
+\relax 
+\citation{krizhevsky_imagenet_2012}
+\@writefile{toc}{\contentsline {title}{Multi-Dimensional Gated Recurrent Units for the Segmentation of Volumetric Biomedical Data}{1}}
+\@writefile{toc}{\authcount {3}}
+\@writefile{toc}{\contentsline {author}{Simon Andermatt}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\citation{stollenga_parallel_2015}
+\citation{hochreiter1997long}
+\citation{cho_learning_2014}
+\citation{olah_understanding_2015}
+\citation{chung_empirical_2014}
+\citation{greff_lstm:_2015}
+\citation{jozefowicz_empirical_2015}
+\citation{mendrik2015mrbrains}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Methods}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Data}{2}}
+\citation{cho_learning_2014}
+\citation{stollenga_parallel_2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Slice 19 of the 5th training sample. \emph  {Top row (left to right):} T1, T1\_IR and T2\_FLAIR. \emph  {Bottom row:} respective highpass filtered versions.}}{3}}
+\newlabel{data}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Convolutional Gated Recurrent Unit}{3}}
+\newlabel{reordering}{{2.2}{3}}
+\citation{stollenga_parallel_2015}
+\newlabel{eq:cgru1}{{5}{4}}
+\newlabel{eq:cgru2}{{6}{4}}
+\newlabel{eq:cgru3}{{7}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Experiments}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{Network}{4}}
+\citation{chetlur_cudnn:_2014}
+\citation{jia2014caffe}
+\citation{stollenga_parallel_2015}
+\citation{ronneberger_u-net:_2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces (a) Directed graph denoting the computations in one C-GRU. The variables $x^{d,o}$, $h^{d,o}$ with $o \in \{-1,+1\}$ represent the input and output data across all $I$ and $J$ channels respectively. The $\circledast $ operator denotes here the sum per channel $j$ over the convolutions with each channel $i$ or $k$, as used in equations (5\hbox {})--(7\hbox {}). (b) Proposed arrangement of 6 C-GRUs in a MD-GRU for three-dimensional data. (c) Setup of our network.}}{5}}
+\newlabel{fig:network}{{2}{5}}
+\newlabel{setting}{{2.3}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{Setting}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{Preprocessing}{5}}
+\citation{zeiler_adadelta_2012}
+\citation{icml2013_wan13}
+\@writefile{toc}{\contentsline {subsubsection}{Data augmentation}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{Training}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{Testing}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Feasibility Study}{6}}
+\newlabel{feasibilitystudylabel}{{3.1}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Feasibility study. Dice coefficients in percent for gray and white matter (GM/WM), cerebrospinal fluid (CSF) and intracranial volume (ICV).}}{6}}
+\newlabel{feasibilityquantitative}{{1}{6}}
+\citation{cicek_3d_2016}
+\citation{stollenga_parallel_2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Feasibility study. \emph  {Top row:} slice 19 of the 5th training volume used for the evaluation. The images from left to right represent the results of the MD-LSTM, the MD-GRU and the manual labeling. \emph  {Bottom row:} convergence rates for the feasibility study of both MD-GRU and MD-LSTM.}}{7}}
+\newlabel{feasibilityqualitative}{{3}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}MD-GRU on MRBrainS}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces MrBrainS challenge. Results of the six best performing methods for GM, WM, CSF and ICV of all three used metrics (Dice, 95th-percentile of the Hausdorff distance (HD) and average volume difference (AVD)). A bold number means best out of these six. The results reflect the state on August 12, 2016.}}{8}}
+\newlabel{mrbrainsres}{{2}{8}}
+\newlabel{resultschallenge}{{3.2}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces MrBrainS challenge. \emph  {Rows (top to bottom):} 5th, 10th and 15th test sample. \emph  {Columns (left to right):} slice 19 of our segmentation results, T1, T1\_IR and T2\_FLAIR.}}{8}}
+\newlabel{visualresultschallenge}{{4}{8}}
+\citation{stollenga_parallel_2015}
+\citation{stollenga_parallel_2015}
+\citation{stollenga_parallel_2015}
+\citation{stollenga_parallel_2015}
+\citation{cicek_3d_2016}
+\bibstyle{splncs03}
+\bibdata{manuallib}
+\bibcite{chetlur_cudnn:_2014}{1}
+\bibcite{cho_learning_2014}{2}
+\bibcite{chung_empirical_2014}{3}
+\bibcite{cicek_3d_2016}{4}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{Conclusion}{9}}
+\bibcite{greff_lstm:_2015}{5}
+\bibcite{hochreiter1997long}{6}
+\bibcite{jia2014caffe}{7}
+\bibcite{jozefowicz_empirical_2015}{8}
+\bibcite{krizhevsky_imagenet_2012}{9}
+\bibcite{mendrik2015mrbrains}{10}
+\bibcite{olah_understanding_2015}{11}
+\bibcite{ronneberger_u-net:_2015}{12}
+\bibcite{stollenga_parallel_2015}{13}
+\bibcite{icml2013_wan13}{14}
+\bibcite{zeiler_adadelta_2012}{15}

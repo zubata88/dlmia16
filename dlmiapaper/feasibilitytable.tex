@@ -1,0 +1,18 @@
+\documentclass[varwidth=true, border=10pt, convert={size=640x}]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\begin{document}
+\begin{table}
+\caption{Feasibility study. Dice coefficients in percent for gray and white matter (GM/WM), cerebrospinal fluid (CSF) and intracranial volume (ICV).}% The case with more memory was only trained until iteration 28000}
+\begin{center}
+\begin{tabular}{lllll}\toprule
+× & GM & WM & CSF & ICV\\ \midrule
+MD-LSTM  & \textbf{88.09}  & 90.08 & 82.62  & 97.56 \\ 
+MD-GRU & 87.88 & \textbf{90.15 } & \textbf{83.19} & \textbf{97.73 }\\ \bottomrule
+\end{tabular}
+\label{feasibilityquantitative}
+\end{center}
+\end{table}
+
+\end{document}

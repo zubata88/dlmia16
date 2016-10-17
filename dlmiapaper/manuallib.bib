@@ -1,0 +1,219 @@
+@article{chetlur_cudnn:_2014,
+  title = {{{cuDNN}}: {{Efficient Primitives}} for {{Deep Learning}}},
+  shorttitle = {{{cuDNN}}},
+  abstract = {We present a library of efficient implementations of deep learning primitives. Deep learning workloads are computationally intensive, and optimizing their kernels is difficult and time-consuming. As parallel architectures evolve, kernels must be reoptimized, which makes maintaining codebases difficult over time. Similar issues have long been addressed in the HPC community by libraries such as the Basic Linear Algebra Subroutines (BLAS). However, there is no analogous library for deep learning. Without such a library, researchers implementing deep learning workloads on parallel processors must create and optimize their own implementations of the main computational kernels, and this work must be repeated as new parallel processors emerge. To address this problem, we have created a library similar in intent to BLAS, with optimized routines for deep learning workloads. Our implementation contains routines for GPUs, although similarly to the BLAS library, these routines could be implemented for other platforms. The library is easy to integrate into existing frameworks, and provides optimized performance and memory usage. For example, integrating cuDNN into Caffe, a popular framework for convolutional networks, improves performance by 36\% on a standard model while also reducing memory consumption.},
+  timestamp = {2016-06-30T14:37:44Z},
+  archivePrefix = {arXiv},
+  eprinttype = {arxiv},
+  eprint = {1410.0759},
+  primaryClass = {cs},
+  urldate = {2016-06-30},
+  journal = {arXiv:1410.0759 [cs]},
+  author = {Chetlur, Sharan and Woolley, Cliff and Vandermersch, Philippe and Cohen, Jonathan and Tran, John and Catanzaro, Bryan and Shelhamer, Evan},
+  month = oct,
+  year = {2014},
+  keywords = {Computer Science - Learning,Computer Science - Mathematical Software,Computer Science - Neural and Evolutionary Computing},
+  file = {arXiv\:1410.0759 PDF:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/VGJ483P2/Chetlur et al. - 2014 - cuDNN Efficient Primitives for Deep Learning.pdf:application/pdf;arXiv.org Snapshot:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/29A6AP55/1410.html:text/html}
+}
+
+
+@article{cho_learning_2014,
+  title = {Learning {{Phrase Representations}} using {{RNN Encoder-Decoder}} for {{Statistical Machine Translation}}},
+  abstract = {In this paper, we propose a novel neural network model called RNN Encoder-Decoder that consists of two recurrent neural networks (RNN). One RNN encodes a sequence of symbols into a fixed-length vector representation, and the other decodes the representation into another sequence of symbols. The encoder and decoder of the proposed model are jointly trained to maximize the conditional probability of a target sequence given a source sequence. The performance of a statistical machine translation system is empirically found to improve by using the conditional probabilities of phrase pairs computed by the RNN Encoder-Decoder as an additional feature in the existing log-linear model. Qualitatively, we show that the proposed model learns a semantically and syntactically meaningful representation of linguistic phrases.},
+  timestamp = {2016-06-24T12:33:40Z},
+  archivePrefix = {arXiv},
+  eprinttype = {arxiv},
+  eprint = {1406.1078},
+  primaryClass = {cs, stat},
+  urldate = {2016-06-24},
+  journal = {arXiv:1406.1078 [cs, stat]},
+  author = {Cho, Kyunghyun and {van Merrienboer}, Bart and Gulcehre, Caglar and Bahdanau, Dzmitry and Bougares, Fethi and Schwenk, Holger and Bengio, Yoshua},
+  month = jun,
+  year = {2014},
+  keywords = {Computer Science - Computation and Language,Computer Science - Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning},
+  file = {arXiv\:1406.1078 PDF:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/8B4K23JP/Cho et al. - 2014 - Learning Phrase Representations using RNN Encoder-.pdf:application/pdf;arXiv.org Snapshot:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/EC55A69W/1406.html:text/html}
+}
+
+
+@article{chung_empirical_2014,
+  title = {Empirical {{Evaluation}} of {{Gated Recurrent Neural Networks}} on {{Sequence Modeling}}},
+  abstract = {In this paper we compare different types of recurrent units in recurrent neural networks (RNNs). Especially, we focus on more sophisticated units that implement a gating mechanism, such as a long short-term memory (LSTM) unit and a recently proposed gated recurrent unit (GRU). We evaluate these recurrent units on the tasks of polyphonic music modeling and speech signal modeling. Our experiments revealed that these advanced recurrent units are indeed better than more traditional recurrent units such as tanh units. Also, we found GRU to be comparable to LSTM.},
+  timestamp = {2016-06-24T12:31:19Z},
+  archivePrefix = {arXiv},
+  eprinttype = {arxiv},
+  eprint = {1412.3555},
+  primaryClass = {cs},
+  urldate = {2016-06-24},
+  journal = {arXiv:1412.3555 [cs]},
+  author = {Chung, Junyoung and Gulcehre, Caglar and Cho, KyungHyun and Bengio, Yoshua},
+  month = dec,
+  year = {2014},
+  keywords = {Computer Science - Learning,Computer Science - Neural and Evolutionary Computing},
+  file = {arXiv\:1412.3555 PDF:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/4QQVR3DP/Chung et al. - 2014 - Empirical Evaluation of Gated Recurrent Neural Net.pdf:application/pdf;arXiv.org Snapshot:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/M5E3QTE5/1412.html:text/html}
+}
+
+@article{greff_lstm:_2015,
+  title = {{{LSTM}}: {{A Search Space Odyssey}}},
+  shorttitle = {{{LSTM}}},
+  abstract = {Several variants of the Long Short-Term Memory (LSTM) architecture for recurrent neural networks have been proposed since its inception in 1995. In recent years, these networks have become the state-of-the-art models for a variety of machine learning problems. This has led to a renewed interest in understanding the role and utility of various computational components of typical LSTM variants. In this paper, we present the first large-scale analysis of eight LSTM variants on three representative tasks: speech recognition, handwriting recognition, and polyphonic music modeling. The hyperparameters of all LSTM variants for each task were optimized separately using random search and their importance was assessed using the powerful fANOVA framework. In total, we summarize the results of 5400 experimental runs (about 15 years of CPU time), which makes our study the largest of its kind on LSTM networks. Our results show that none of the variants can improve upon the standard LSTM architecture significantly, and demonstrate the forget gate and the output activation function to be its most critical components. We further observe that the studied hyperparameters are virtually independent and derive guidelines for their efficient adjustment.},
+  timestamp = {2016-06-24T13:08:31Z},
+  archivePrefix = {arXiv},
+  eprinttype = {arxiv},
+  eprint = {1503.04069},
+  primaryClass = {cs},
+  urldate = {2016-06-24},
+  journal = {arXiv:1503.04069 [cs]},
+  author = {Greff, Klaus and Srivastava, Rupesh Kumar and Koutn{\'\i}k, Jan and Steunebrink, Bas R. and Schmidhuber, J{\"u}rgen},
+  month = mar,
+  year = {2015},
+  keywords = {68T10,Computer Science - Learning,Computer Science - Neural and Evolutionary Computing,H.5.5,I.2.6,I.2.7,I.5.1},
+  file = {arXiv\:1503.04069 PDF:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/UGSNE6A8/Greff et al. - 2015 - LSTM A Search Space Odyssey.pdf:application/pdf;arXiv.org Snapshot:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/KDJB88IB/1503.html:text/html}
+}
+
+@article{jia2014caffe,
+  title = {Caffe: {{Convolutional Architecture}} for {{Fast Feature Embedding}}},
+  timestamp = {2016-06-30T14:24:17Z},
+  journal = {arXiv preprint arXiv:1408.5093},
+  author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
+  year = {2014}
+}
+
+@inproceedings{jozefowicz_empirical_2015,
+  title = {An {{Empirical Exploration}} of {{Recurrent Network Architectures}}},
+  timestamp = {2016-07-08T14:00:40Z},
+  booktitle = {Proceedings of {{The}} 32nd {{International Conference}} on {{Machine Learning}}},
+  author = {Jozefowicz, Rafal and Zaremba, Wojciech and Sutskever, Ilya},
+  year = {2015},
+  pages = {2342--2350}
+}
+
+@incollection{krizhevsky_imagenet_2012,
+  title = {{{ImageNet Classification}} with {{Deep Convolutional Neural Networks}}},
+  timestamp = {2016-07-07T13:04:35Z},
+  urldate = {2016-07-07},
+  booktitle = {Advances in {{Neural Information Processing Systems}} 25},
+  publisher = {{Curran Associates, Inc.}},
+  author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E.},
+  editor = {Pereira, F. and Burges, C. J. C. and Bottou, L. and Weinberger, K. Q.},
+  year = {2012},
+  pages = {1097--1105},
+  file = {NIPS Full Text PDF:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/9GK3WJA6/Krizhevsky et al. - 2012 - ImageNet Classification with Deep Convolutional Ne.pdf:application/pdf;NIPS Snapshort:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/3S8KAR7Z/4824-imagenet-classification-w.html:text/html}
+}
+
+
+@article{mendrik2015mrbrains,
+  title={MRBrainS Challenge: Online evaluation framework for brain image segmentation in 3T MRI scans},
+  author={Mendrik, Adri{\"e}nne M and Vincken, Koen L and Kuijf, Hugo J and Breeuwer, Marcel and Bouvy, Willem H and De Bresser, Jeroen and Alansary, Amir and De Bruijne, Marleen and Carass, Aaron and El-Baz, Ayman and others},
+  journal={Computational intelligence and neuroscience},
+  year={2015},
+  publisher={Hindawi Publishing Corporation}
+}
+
+
+@incollection{ronneberger_u-net:_2015,
+  series = {Lecture Notes in Computer Science},
+  title = {U-{{Net}}: {{Convolutional Networks}} for {{Biomedical Image Segmentation}}},
+  copyright = {\textcopyright{}2015 Springer International Publishing Switzerland},
+  isbn = {978-3-319-24573-7 978-3-319-24574-4},
+  shorttitle = {U-{{Net}}},
+  abstract = {There is large consent that successful training of deep networks requires many thousand annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization. We show that such a network can be trained end-to-end from very few images and outperforms the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. Using the same network trained on transmitted light microscopy images (phase contrast and DIC) we won the ISBI cell tracking challenge 2015 in these categories by a large margin. Moreover, the network is fast. Segmentation of a 512x512 image takes less than a second on a recent GPU. The full implementation (based on Caffe) and the trained networks are available at http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net .},
+  language = {en},
+  timestamp = {2016-07-04T17:24:38Z},
+  number = {9351},
+  urldate = {2016-07-04},
+  booktitle = {Medical {{Image Computing}} and {{Computer-Assisted Intervention}} \textendash{} {{MICCAI}} 2015},
+  publisher = {{Springer International Publishing}},
+  author = {Ronneberger, Olaf and Fischer, Philipp and Brox, Thomas},
+  editor = {Navab, Nassir and Hornegger, Joachim and Wells, William M. and Frangi, Alejandro F.},
+  month = oct,
+  year = {2015},
+  keywords = {Artificial Intelligence (incl. Robotics),Computer Graphics,Health Informatics,Image Processing and Computer Vision,Imaging / Radiology,Pattern Recognition},
+  pages = {234--241},
+  file = {Full Text PDF:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/QWIK9GKR/Ronneberger et al. - 2015 - U-Net Convolutional Networks for Biomedical Image.pdf:application/pdf;Snapshot:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/GGV3F2S9/978-3-319-24574-4_28.html:text/html},
+  doi = {10.1007/978-3-319-24574-4_28}
+}
+
+
+
+@incollection{stollenga_parallel_2015,
+  title = {Parallel {{Multi-Dimensional LSTM}}, {{With Application}} to {{Fast Biomedical Volumetric Image Segmentation}}},
+  timestamp = {2016-06-24T11:50:51Z},
+  urldate = {2016-06-24},
+  booktitle = {Advances in {{Neural Information Processing Systems}} 28},
+  publisher = {{Curran Associates, Inc.}},
+  author = {Stollenga, Marijn F and Byeon, Wonmin and Liwicki, Marcus and Schmidhuber, Juergen},
+  editor = {Cortes, C. and Lawrence, N. D. and Lee, D. D. and Sugiyama, M. and Garnett, R.},
+  year = {2015},
+  pages = {2998--3006},
+  file = {NIPS Full Text PDF:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/M4VVCWSX/Stollenga et al. - 2015 - Parallel Multi-Dimensional LSTM, With Application .pdf:application/pdf;NIPS Snapshort:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/WJA4AJ22/5642-efficient-inference-of-continuous-markov-random-fields-with-polynomial-potentials.html:text/html}
+}
+
+@article{zeiler_adadelta_2012,
+  title = {{{ADADELTA}}: {{An Adaptive Learning Rate Method}}},
+  shorttitle = {{{ADADELTA}}},
+  abstract = {We present a novel per-dimension learning rate method for gradient descent called ADADELTA. The method dynamically adapts over time using only first order information and has minimal computational overhead beyond vanilla stochastic gradient descent. The method requires no manual tuning of a learning rate and appears robust to noisy gradient information, different model architecture choices, various data modalities and selection of hyperparameters. We show promising results compared to other methods on the MNIST digit classification task using a single machine and on a large scale voice dataset in a distributed cluster environment.},
+  timestamp = {2016-03-03T14:28:26Z},
+  archivePrefix = {arXiv},
+  eprinttype = {arxiv},
+  eprint = {1212.5701},
+  primaryClass = {cs},
+  urldate = {2016-03-03},
+  journal = {arXiv:1212.5701 [cs]},
+  author = {Zeiler, Matthew D.},
+  month = dec,
+  year = {2012},
+  keywords = {Computer Science - Learning},
+  file = {arXiv\:1212.5701 PDF:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/E26GARXG/Zeiler - 2012 - ADADELTA An Adaptive Learning Rate Method.pdf:application/pdf;arXiv.org Snapshot:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/H98AVINW/1212.html:text/html}
+}
+
+@article{hochreiter1997long,
+  title={Long short-term memory},
+  author={Hochreiter, Sepp and Schmidhuber, J{\"u}rgen},
+  journal={Neural computation},
+  volume={9},
+  number={8},
+  pages={1735--1780},
+  year={1997},
+  publisher={MIT Press}
+}
+
+
+@misc{olah_understanding_2015,
+  type = {blog post},
+  title = {Understanding {{LSTM Networks}}},
+  timestamp = {2016-07-08T20:35:18Z},
+  urldate = {2016-07-08},
+  author = {Olah, Christopher},
+  month = aug,
+  year = {2015},
+  howpublished = {\url{http://colah.github.io/posts/2015-08-Understanding-LSTMs/}},
+  file = {Understanding LSTM Networks -- colah's blog:/home/simon/.zotero/zotero/0eitnigf.default/zotero/storage/VS3ET5Q4/2015-08-Understanding-LSTMs.html:text/html}
+}
+
+@article{cicek_3d_2016,
+	title = {3D {U}-{Net}: {Learning} {Dense} {Volumetric} {Segmentation} from {Sparse} {Annotation}},
+	shorttitle = {3D {U}-{Net}},
+	abstract = {This paper introduces a network for volumetric segmentation that learns from sparsely annotated volumetric images. We outline two attractive use cases of this method: (1) In a semi-automated setup, the user annotates some slices in the volume to be segmented. The network learns from these sparse annotations and provides a dense 3D segmentation. (2) In a fully-automated setup, we assume that a representative, sparsely annotated training set exists. Trained on this data set, the network densely segments new volumetric images. The proposed network extends the previous u-net architecture from Ronneberger et al. by replacing all 2D operations with their 3D counterparts. The implementation performs on-the-fly elastic deformations for efficient data augmentation during training. It is trained end-to-end from scratch, i.e., no pre-trained network is required. We test the performance of the proposed method on a complex, highly variable 3D structure, the Xenopus kidney, and achieve good results for both use cases.},
+	urldate = {2016-07-10},
+	journal = {arXiv:1606.06650 [cs]},
+	author = {{\c{C}}i{\c{c}}ek, {\"O}zg{\"u}n and Abdulkadir, Ahmed and Lienkamp, Soeren S. and Brox, Thomas and Ronneberger, Olaf},
+	month = jun,
+	year = {2016},
+	note = {arXiv: 1606.06650},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1606.06650 PDF:/home/simon/.zotero/zotero/rjq0yzoc.default/zotero/storage/S59GDJP7/Çiçek et al. - 2016 - 3D U-Net Learning Dense Volumetric Segmentation f.pdf:application/pdf;arXiv.org Snapshot:/home/simon/.zotero/zotero/rjq0yzoc.default/zotero/storage/K7T3XVRM/1606.html:text/html}
+}
+
+@inproceedings{icml2013_wan13, 
+    Publisher = {JMLR Workshop and Conference Proceedings}, 
+    Title = {Regularization of Neural Networks using DropConnect}, 
+    Booktitle = {Proceedings of the 30th International Conference on Machine Learning (ICML-13)}, 
+    Author = {Li Wan and Matthew Zeiler and Sixin Zhang and Yann L. Cun and Rob Fergus}, 
+    Number = {3}, 
+    Month = may, 
+    Volume = {28}, 
+    Editor = {Sanjoy Dasgupta and David Mc{A}llester}, 
+    Year = {2013}, 
+    Pages = {1058-1066}, 
+    Abstract = {We introduce DropConnect, a generalization of DropOut, for regularizing large fully-connected layers within neural networks. When training with Dropout, a randomly selected subset of activations are set to zero within each layer. DropConnect instead sets a randomly selected subset of weights within the network to zero. Each unit thus receives input from a random subset of units in the previous layer. We derive a bound on the generalization performance of both Dropout and DropConnect. We then evaluate DropConnect on a range of datasets, comparing to Dropout, and show state-of-the-art results on several image recoginition benchmarks can be obtained by aggregating multiple DropConnect-trained models.}
+   }

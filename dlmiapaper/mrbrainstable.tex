@@ -1,0 +1,26 @@
+\documentclass[a4paper,9pt]{llncs}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\begin{document}
+\begin{table}
+\begin{center}
+ \caption{MrBrainS challenge. Results of the six best performing methods for GM, WM, CSF and ICV of all three used metrics (Dice, 95th-percentile of the Hausdorff distance (HD) and average volume difference (AVD)). A bold number means best out of these six. The results reflect the state on August 12, 2016.}
+\label{mrbrainsres}
+ \scriptsize
+\begin{tabular}{l c rcl rcl rcl rcl rcl}
+\toprule
+Team name &  Rank &\multicolumn{3}{c}{GM} & \multicolumn{3}{c}{WM} & \multicolumn{3}{c}{CSF} &  \multicolumn{3}{c}{ICV}\\%\hline\hline
+&  & Dice & HD & AVD & Dice & HD & AVD & Dice & HD & AVD & Dice & HD & AVD \\\midrule
+CU\_DL2  & \textbf{1}& \textbf{86.15} & \textbf{1.45} & 6.60 & \textbf{89.46} & \textbf{1.94} & 6.05 & \textbf{84.25}& 2.19 & 7.69 &  98.10 & 2.75 & 1.54\\
+CU\_DL& 2  & 86.12 & 1.47 & 6.42 & 89.39 & \textbf{1.94} & \textbf{5.84} & 83.96 & 2.28 & 7.44 &  97.99 & 3.16 & 1.83 \\
+MD-GRU [proposed] & 3 & 85.40 & 1.55 & \textbf{6.09} & 88.98 & 2.02 & 7.69 & 84.13 & 2.17 & 7.44 & \textbf{98.15} & \textbf{2.37} & 0.86\\
+PyraMiD-LSTM2 & 4 & 84.89 & 1.67 & 6.35 & 88.53 & 2.07 & 5.93 & 83.05 & 2.30 & 7.17 &  98.04 & 2.86 & \textbf{0.69}\\
+FBI/LMB Freiburg& 5 & 85.44 & 1.58 & 6.60 & 88.86 & 1.95 & 6.47 & 83.47 & 2.22 & 8.63 &  97.98 & 2.51 & 1.06\\
+IDSIA& 6 & 84.82 & 1.70 & 6.77 & 88.33 & 2.08 & 7.05& 83.72 & \textbf{2.14} & \textbf{7.09}& \textbf{98.15} & 2.44 & 0.95\\\bottomrule
+\end{tabular}
+\end{center}
+ \label{resultschallenge}
+\end{table}
+
+\end{document}

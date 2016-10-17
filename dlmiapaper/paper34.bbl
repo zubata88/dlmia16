@@ -1,0 +1,87 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{chetlur_cudnn:_2014}
+Chetlur, S., Woolley, C., Vandermersch, P., Cohen, J., Tran, J., Catanzaro, B.,
+  Shelhamer, E.: {{cuDNN}}: {{Efficient Primitives}} for {{Deep Learning}}.
+  arXiv:1410.0759 [cs]  (Oct 2014)
+
+\bibitem{cho_learning_2014}
+Cho, K., {van Merrienboer}, B., Gulcehre, C., Bahdanau, D., Bougares, F.,
+  Schwenk, H., Bengio, Y.: Learning {{Phrase Representations}} using {{RNN
+  Encoder-Decoder}} for {{Statistical Machine Translation}}. arXiv:1406.1078
+  [cs, stat]  (Jun 2014)
+
+\bibitem{chung_empirical_2014}
+Chung, J., Gulcehre, C., Cho, K., Bengio, Y.: Empirical {{Evaluation}} of
+  {{Gated Recurrent Neural Networks}} on {{Sequence Modeling}}. arXiv:1412.3555
+  [cs]  (Dec 2014)
+
+\bibitem{cicek_3d_2016}
+{\c{C}}i{\c{c}}ek, {\"O}., Abdulkadir, A., Lienkamp, S.S., Brox, T.,
+  Ronneberger, O.: 3d {U}-{Net}: {Learning} {Dense} {Volumetric} {Segmentation}
+  from {Sparse} {Annotation}. arXiv:1606.06650 [cs]  (Jun 2016), arXiv:
+  1606.06650
+
+\bibitem{greff_lstm:_2015}
+Greff, K., Srivastava, R.K., Koutn{\'\i}k, J., Steunebrink, B.R., Schmidhuber,
+  J.: {{LSTM}}: {{A Search Space Odyssey}}. arXiv:1503.04069 [cs]  (Mar 2015)
+
+\bibitem{hochreiter1997long}
+Hochreiter, S., Schmidhuber, J.: Long short-term memory. Neural computation
+  9(8),  1735--1780 (1997)
+
+\bibitem{jia2014caffe}
+Jia, Y., Shelhamer, E., Donahue, J., Karayev, S., Long, J., Girshick, R.,
+  Guadarrama, S., Darrell, T.: Caffe: {{Convolutional Architecture}} for {{Fast
+  Feature Embedding}}. arXiv preprint arXiv:1408.5093  (2014)
+
+\bibitem{jozefowicz_empirical_2015}
+Jozefowicz, R., Zaremba, W., Sutskever, I.: An {{Empirical Exploration}} of
+  {{Recurrent Network Architectures}}. In: Proceedings of {{The}} 32nd
+  {{International Conference}} on {{Machine Learning}}. pp. 2342--2350 (2015)
+
+\bibitem{krizhevsky_imagenet_2012}
+Krizhevsky, A., Sutskever, I., Hinton, G.E.: {{ImageNet Classification}} with
+  {{Deep Convolutional Neural Networks}}. In: Pereira, F., Burges, C.J.C.,
+  Bottou, L., Weinberger, K.Q. (eds.) Advances in {{Neural Information
+  Processing Systems}} 25, pp. 1097--1105. {Curran Associates, Inc.} (2012)
+
+\bibitem{mendrik2015mrbrains}
+Mendrik, A.M., Vincken, K.L., Kuijf, H.J., Breeuwer, M., Bouvy, W.H.,
+  De~Bresser, J., Alansary, A., De~Bruijne, M., Carass, A., El-Baz, A., et~al.:
+  Mrbrains challenge: Online evaluation framework for brain image segmentation
+  in 3t mri scans. Computational intelligence and neuroscience  (2015)
+
+\bibitem{olah_understanding_2015}
+Olah, C.: Understanding {{LSTM Networks}}.
+  \url{http://colah.github.io/posts/2015-08-Understanding-LSTMs/} (Aug 2015)
+
+\bibitem{ronneberger_u-net:_2015}
+Ronneberger, O., Fischer, P., Brox, T.: U-{{Net}}: {{Convolutional Networks}}
+  for {{Biomedical Image Segmentation}}. In: Navab, N., Hornegger, J., Wells,
+  W.M., Frangi, A.F. (eds.) Medical {{Image Computing}} and {{Computer-Assisted
+  Intervention}} \textendash{} {{MICCAI}} 2015, pp. 234--241. No. 9351 in
+  Lecture Notes in Computer Science, {Springer International Publishing} (Oct
+  2015)
+
+\bibitem{stollenga_parallel_2015}
+Stollenga, M.F., Byeon, W., Liwicki, M., Schmidhuber, J.: Parallel
+  {{Multi-Dimensional LSTM}}, {{With Application}} to {{Fast Biomedical
+  Volumetric Image Segmentation}}. In: Cortes, C., Lawrence, N.D., Lee, D.D.,
+  Sugiyama, M., Garnett, R. (eds.) Advances in {{Neural Information Processing
+  Systems}} 28, pp. 2998--3006. {Curran Associates, Inc.} (2015)
+
+\bibitem{icml2013_wan13}
+Wan, L., Zeiler, M., Zhang, S., Cun, Y.L., Fergus, R.: Regularization of neural
+  networks using dropconnect. In: Dasgupta, S., Mc{A}llester, D. (eds.)
+  Proceedings of the 30th International Conference on Machine Learning
+  (ICML-13). vol.~28, pp. 1058--1066. JMLR Workshop and Conference Proceedings
+  (May 2013)
+
+\bibitem{zeiler_adadelta_2012}
+Zeiler, M.D.: {{ADADELTA}}: {{An Adaptive Learning Rate Method}}.
+  arXiv:1212.5701 [cs]  (Dec 2012)
+
+\end{thebibliography}

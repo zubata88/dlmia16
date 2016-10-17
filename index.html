@@ -11,7 +11,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-		<title>MD-GRU: Automatic Segmentation of Volumetric Biomedical Data</title>
+		<title>Multi-Dimensional Gated Recurrent Units for the Segmentation of Biomedical 3D-Data</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/white.css" id="theme">
@@ -32,7 +32,7 @@
 <script type="text/x-mathjax-config">
     // <![CDATA[
     MathJax.Hub.Config({ 
-        TeX: {extensions: ["AMSmath.js", "AMSsymbols.js"]},     
+        TeX: {extensions: ["AMSmath.js", "AMSsymbols.js","color.js"]},     
         extensions: ["tex2jax.js"],
         jax: ["input/TeX", "output/HTML-CSS"],
         showProcessingMessages : false,
@@ -70,14 +70,14 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				
-				<section><br/><br/><h2>Automatic Segmentation of Brain Structures<br/> using Multi-Dimensional <br/>Recurrent Neural Networks</h2><p>Simon Andermatt</p><p>Medical Image Analysis Center (MIAC)</p></section>
+				<section><br/><br/><h2>Multi-Dimensional </br> Gated Recurrent Units </br>for the Segmentation </br>of Biomedical 3D-Data</h2>
+				<p>Simon Andermatt<sup>1</sup>, Simon Pezold<sup>1</sup>, and Philippe Cattin<sup>1</sup></p><p style="font-size: 80%">Medical Image Analysis Center</p>
+				<p style="font-size:80%"><sup>1</sup>2nd workshop on deep learning in medical image analysis in conjunction with MICCAI 2016</p></section>
 				<section data-markdown>
 					### Contents
 					* Voxelwise classification of MrBrains
-					* Recurrent neural networks (RNN)
-					* Adaptation to 3 dimensions
-					* MD-GRU on MrBrains13
-
+					* RNN: Adaptation to 3 dimensions
+					* MD-GRU and MD-LSTM on MrBrains13
 				</section>
 				<!--<section>
 <h3>Goal</h3>
@@ -123,7 +123,7 @@ blabla
 					* <div class="fragment">$L\_0$ "Norm": $||x||_0 = |x_1|^0+...+|x_n|^0$<br> <small>(number of nonzero components)</small> <br>Not a norm, since $ ||\lambda x||_0  \neq  |\lambda| \,||x||_0 $</div>
 					</script>
 				</section>-->
-				<section data-markdown>
+<!--				<section data-markdown>
 					### RNN
 					* Neural network handling sequences
 					* For each point in sequence:
@@ -134,10 +134,10 @@ blabla
 						* Output:
 							- Output at time t
 
-				</section>
+				</section>-->
 				
 				<section id="firstjssection">
-					<h2>RNN (typical application)</h2>
+					<h2>RNN (example)</h2>
 					<h4>text to text: translation</h4>
 					<object type="image/svg+xml" data="images/simplernngatto-topath2-encoding.svg" id="svgObject"><!--fallback--></object>
 					<button id="svg1button">next</button>
@@ -284,7 +284,7 @@ blabla
 					<!--<video autoplay="true" style="float: left; width: 50%;" src="images/test1.mp4" controls="true"></video> <video style="float: right; width: 20%;" src="images/test1.mp4" autoplay="true" control="true"></video>-->
 				</section>
 				<section>
-					<h2>RNN (typical application)</h2>
+					<h2>RNN (example)</h2>
 					<h4>unfolded</h4>
 					<object type="image/svg+xml" data="images/simplernngattoexpanded-topath1.svg" id="svgObject16"><!--fallback--></object>
 					<button id="svg16button">next</button>
@@ -338,12 +338,17 @@ blabla
 
 							console.log("in svg16resetbutton");	
 					    });
+						for (i = 0; i < 26; i++) {
+							next16();
+						}
+
 						});
+
 					</script>
 				</section>
 				
 				<section id="firstjssection2">
-					<h2>RNN (typical application)</h2>
+					<h2>RNN (example)</h2>
 					<h4>more likely setup</h4>
 					<object type="image/svg+xml" data="images/simplernngattoexpandedfully5.svg" id="svgObject2"><!--fallback--></object>
 					<button id="svg2button">next</button>
@@ -372,7 +377,16 @@ blabla
 								svgItem2.style.transform = "translate("+pos2+"px,0px)";
 								console.log("in svg2resetbutton");	
 							});
+						next2();
+						next2();
+						next2();
+						next2();
+						next2();
+						next2();
+						next2();
+						next2();
 						});
+
 					</script>
 					<!---<svg width=400px height=300px xmlns="http://www.w3.org/2000/svg" src="images/simplernngatto.svg"></svg>
 					<!--<video autoplay="true" style="float: left; width: 50%;" src="images/test1.mp4" controls="true"></video> <video style="float: right; width: 20%;" src="images/test1.mp4" autoplay="true" control="true"></video>-->
@@ -391,11 +405,9 @@ blabla
 				</script>
 				</section>
 				<section>
-					<h2>MD-RNN predecessor information (2D)</h2>
-					<h4>Direct predecessor only </br>(multiplication)</h4>
+					<h2>MD-RNN recurrent connections (2D)</h2>
+					<h4>Direct predecessor only</h4>
 					<object type="image/svg+xml" data="images/cube-only-one-neighbor-2d.svg" id="svgObject3"><!--fallback--></object>
-					<button id="svg3button">run</button>
-					<!--<button id="svg3resetbutton">reset</button>-->
 					<script>
 						document.getElementById('svgObject3').addEventListener('load',function(){
 							var a3 = document.getElementById("svgObject3");
@@ -463,16 +475,15 @@ blabla
 									clearInterval(myinterval3);
 								}
 							};
-							$('#svg3button').click(start3);
+							$(svgDoc3).click(start3);
 						});
 					</script>
 				</section>
 				<section>
-					<h2>MD-RNN predecessor information (2D)</h2>
+					<h2>MD-RNN recurrent connections (2D)</h2>
 					<h4>Including <span style="color: red;">neighborhood</span> of predecessor (convolution) </h4>
 					<object type="image/svg+xml" data="images/cube-conv-neighbor2.svg" id="svgObject4"><!--fallback--></object>
-										<button id="svg4button">run</button>
-					<!--<button id="svg3resetbutton">reset</button>-->
+					<div id="focusdummy"></div>
 					<script>
 						document.getElementById('svgObject4').addEventListener('load',function(){
 							var a4 = document.getElementById("svgObject4");
@@ -507,6 +518,7 @@ blabla
 								yellowarrow.style.transform = "translate(0px,"+posy+"%)";
 								console.log("in svg4button");
 								myinterval4 = setInterval(next4,250);
+
 							};
 							var next4=function() {
 								var change = 0;
@@ -539,7 +551,7 @@ blabla
 									clearInterval(myinterval4);
 								}
 							};
-							$('#svg4button').click(start4);
+							$(svgDoc4).click(start4);
 						});
 					</script>
 				</section>
@@ -548,12 +560,30 @@ blabla
 					<img src="images/LSTM3-var-GRU.png"/>
 					<p style="font-size: large;">image taken from Christopher Olah's blog</p><p style="font-size: large;"> (http://colah.github.io/posts/2015-08-Understanding-LSTMs/)</p>
 				</section>-->
-				<section>
-					<h2>Inside the black box:</h2><h4>Convolutional Gated Recurrent Unit (C-GRU)</h4>
-					<p>MD-GRU Layer: 1 C-GRU for each direction & dimension</p>
-					<table><tbody><tr style="display: inline;"><td style="width: 50%; font-size: large;"><span style="float: left;">					 $r^j = \sigma \left( \sum\limits_i^I (x^i*w_r^{i,j}) + \sum\limits_k^J ( h_{t-1}^k*u_r^{k,j} ) +b^j_r\right),$</p>
- $z^j = \sigma \left( \sum\limits_i^I (x^i*w_z^{i,j}) + \sum\limits_k^J ( h_{t-1}^k*u_z^{k,j} ) +b^j_z\right),$
-$\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i*w^{i,j}) + r^j \odot \sum\limits_k^J ( h_{t-1}^k * u^{k,j} ) +b^j\right),$
+				<!--<section data-transition="slide none">
+					<h4>Gated Recurrent Unit (GRU)</h4>
+					<p style="color:white;">MD-GRU Layer: 1 C-GRU for each direction & dimension</p>
+					<table><tbody><tr style="display: inline;"><td style="width: 50%; font-size: 70%"><p></p><span style="float: left;">
+$r^j = \sigma([W_r x]^j + [U_r h_{t-1}]^j),$
+ $z^j = \sigma([W_z x]^j + [U_z h_{t-1}]^j),$
+ $\tilde{h}^j_t = \phi([Wx]^j + [U(r \odot h_{t-1})]^j),$
+ $h^j_{t} = z^j\odot h^j_{t-1} + (1-z^j)\odot \tilde{h}^j_{t}$
+ </span></td><td style="width: 50%; font-size: 50%;" class="fragment">
+						<span style="float: left;">
+					$r^j = \sigma \left( \sum\limits_i^I (x^i\color{black}\odot\color{black}w_r^{i,j}) + \sum\limits_k^J ( h_{t-1}^k\color{black}\odot\color{black}u_r^{k,j} )\right),$
+ $z^j = \sigma \left( \sum\limits_i^I (x^i\color{black}\odot\color{black}w_z^{i,j}) + \sum\limits_k^J ( h_{t-1}^k\color{black}\odot\color{black}u_z^{k,j} ) \right),$
+$\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i\color{black}\odot\color{black}w^{i,j}) + \sum\limits_k^J ( (\color{black}r^j \odot\color{black} h_{t-1}^k) \color{black}\odot\color{black} u^{k,j} )\right),$
+  $h^j_{t} = z^j\odot h^j_{t-1} + (1-z^j)\odot\tilde{h}^j_{t}.$</span>
+					</td></tr></tbody></table>
+
+				</section>--->
+				<section data-transition="none slide">
+					<h4>Convolutional Gated Recurrent Unit (C-GRU)</h4>
+					<p class="fragment">MD-GRU Layer: 1 C-GRU for each direction & dimension</p>
+					<table><tbody><tr style="display: inline;"><td style="width: 50%; font-size: 50%;"><span style="float: left;">
+					$r^j = \sigma \left( \sum\limits_i^I (x^i\color{red}*\color{black}w_r^{i,j}) + \sum\limits_k^J ( h_{t-1}^k\color{red}*\color{black}u_r^{k,j} ) \color{red}+b^j_r\color{black}\right),$
+ $z^j = \sigma \left( \sum\limits_i^I (x^i\color{red}*\color{black}w_z^{i,j}) + \sum\limits_k^J ( h_{t-1}^k\color{red}*\color{black}u_z^{k,j} ) \color{red}+b^j_z\color{black}\right),$
+$\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i\color{red}*\color{black}w^{i,j}) + \color{red}r^j \odot\color{black} \sum\limits_k^J ( h_{t-1}^k \color{red}*\color{black} u^{k,j} ) \color{red}+b^j\color{black}\right),$
   $h^j_{t} = z^j\odot h^j_{t-1} + (1-z^j)\odot\tilde{h}^j_{t}.$</span></td><td style="width: 50%;">
 						<object type="image/svg+xml" data="images/cgrunotitle3-topath.svg" id="svgObject5" style="float: left;"><!--fallback--></object>
 						
@@ -564,24 +594,49 @@ $\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i*w^{i,j}) + r^j \odot \sum\limi
 					<h2>Network</h2>
 					<!--<object type="image/svg+xml" data="images/mdgrunotitle2-topath.svg" id="svgObject6"></object>-->
 					<object type="image/svg+xml" data="images/network-topath.svg" id="svgObject7"><!--fallback--></object>
+					</br>
+					</br>
+					<ul><li>Caffe 1.0 rc3</li>
+					<li>Custom layers using CuDNN v5</li>
+					</ul>
 				</section>
-				<section>
-					<!--<h2>MrBrains13 visual results</h2>-->
-					<!--<object type="image/svg+xml" style="height: 100%; width: auto;"  data="images/mdgru-images.svg" id="svgObject9"></object>-->
-				<img src="images/mdgru-images.png" style="height: 80%;width: 60%; border:none; box-shadow: none;"/>
-
-				</section>
+				<!---feasibility study--->
 				<section>
 					<!--<h2>MrBrains13 challenge results</h2>-->
-					<object type="image/svg+xml" style="width: 100%; height: 100%; filter:invert(1)" data="images/mdgru-table.svg" id="svgObject10"></object>
+					<h2> MD-LSTM / MD-GRU </h2>
+					<object type="image/svg+xml" style="width: 100%; height: 100%;"data="dlmiapaper/feasibilityimages.svg"></object>
 				</section>
+				<section>
+					<h2> MD-LSTM / MD-GRU </h2>
+					<!--<h2>MrBrains13 challenge results</h2>-->
+					<object type="image/svg+xml" style="width: 100%; height: 100%;"data="dlmiapaper/feasibilitytable.svg"></object>
+				</section>
+				<section>
+					<h2> MD-LSTM / MD-GRU </h2>
+					<!--<h2>MrBrains13 challenge results</h2>-->
+					<object type="image/svg+xml" style="width: 100%; height: 100%;"data="dlmiapaper/feasibilityconvergence.svg"></object>
+					<soan style="font-size: 70%">MD-LSTM: 12.8 s / MD-GRU: 9.1 s per iteration</br> (volume of 192 × 192 × 14)</soan>
+
+				</section>
+				<!--- mrbrains main study--->
+				<section>
+					<h2> MD-GRU </h2>
+					<!--<h2>MrBrains13 challenge results</h2>-->
+					<object type="image/svg+xml" style="width: 60%;"data="dlmiapaper/mrbrainsimages.svg"></object>
+				</section>
+				<section>
+					<h2> MD-GRU </h2>
+					<!--<h2>MrBrains13 challenge results</h2>-->
+					<object type="image/svg+xml" style="width: 100%;"data="dlmiapaper/mrbrainstablecropped.svg"></object>
+				</section>
+				
 				<section>
 					<img src="images/qm.png" style="height: 80%; -webkit-filter: invert(1); filter: invert(1); border: none; box-shadow: none;" id="javascriptquestionmark"/>
 					<script type="text/javascript">
 						document.getElementById("javascriptquestionmark").addEventListener('load',function(){
 						var iter = 0;
 						var invert = function() {
-							iter += 1;
+							iter += 1;	
 							$('#javascriptquestionmark').css({"filter": "invert("+(iter%2)+")"});
 							$('#javascriptquestionmark').css({"-webkit-filter": "invert("+(iter%2)+")"});
 						};
@@ -609,7 +664,6 @@ $\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i*w^{i,j}) + r^j \odot \sum\limi
 				progress: true,
 				history: true,
 				center: true,
-
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
