@@ -41,7 +41,7 @@
         tex2jax: {
             processEnvironments: true,
             inlineMath: [ ['$','$'], ["\((","\))"] ],
-            displayMath: [ ['$$','$$'], ["\[","\]"] ],
+            displayMath: [ ['$$','$$'], ["$\[","$\]"] ],
             preview : "none",
             processEscapes: true
         },
@@ -70,14 +70,14 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				
-				<section><br/><br/><h2>Multi-Dimensional Gated Recurrent Units </br>for the Segmentation of Biomedical 3D-Data</h2>
-				<p>Simon Andermatt<sup>1</sup>, Simon Pezold<sup>1</sup>, and Philippe Cattin<sup>1</sup></p><p style="font-size: 80%">Medical Image Analysis Center</p>
-				<p style="font-size:80%"><sup>1</sup>2nd Workshop on Deep Learning in Medical Image Analysis in Conjunction with MICCAI 2016</p></section>
+				<section><br/><br/><span style="font-size:80%"><h2>Multi-Dimensional Gated Recurrent Units </br>for the Segmentation of Biomedical 3D-Data</h2></span>
+				<p>Simon Andermatt<sup>1</sup>, Simon Pezold<sup>1</sup>, and Philippe Cattin<sup>1</sup></p><p style="font-size: 80%"><sup>1</sup>Medical Image Analysis Center</p>
+				<br><p style="font-size:80%">2nd Workshop on Deep Learning in Medical Image Analysis in Conjunction with MICCAI 2016</p></section>
 				<section data-markdown>
 					### Contents
 					* Voxelwise classification of MrBrains
 					* RNN: Adaptation to 3 dimensions
-					* MD-GRU and MD-LSTM on MrBrains13
+					* MD-GRU and MD-LSTM on MrBrainS13
 				</section>
 				<!--<section>
 <h3>Goal</h3>
@@ -140,9 +140,9 @@ blabla
 					<h2>RNN (example)</h2>
 					<h4>text to text: translation</h4>
 					<object type="image/svg+xml" data="images/simplernngatto-topath2-encoding.svg" id="svgObject"><!--fallback--></object>
-					<button id="svg1button">next</button>
-					<button id="svg1resetbutton">reset</button>
-					<button id="svg1encodingbutton">encoding</button>
+					<button id="svg1button" style="display:none;">next</button>
+					<button id="svg1resetbutton" style="display:none;">reset</button>
+					<button id="svg1encodingbutton" style="display:none;">encoding</button>
 
 					<script>
 						document.getElementById('svgObject').addEventListener('load',function(){
@@ -151,6 +151,12 @@ blabla
 						
 						console.log(a);
 						var svgDoc = a.contentDocument;
+						$(svgDoc).click(function(){
+							$('#svg1button').show()
+							$('#svg1resetbutton').show()
+							$('#svg1encodingbutton').show()
+							})
+						
 						$(svgDoc).find("#text15363 tspan tspan:eq(4)")[0].innerHTML = "   "+$(svgDoc).find("#text15363 tspan tspan:eq(4)")[0].innerHTML;
 						$(svgDoc).find("#text15363 tspan tspan:eq(0)")[0].innerHTML = "   "+$(svgDoc).find("#text15363 tspan tspan:eq(0)")[0].innerHTML;
 						$(svgDoc).find("#text15363 tspan tspan:eq(6)")[0].innerHTML = "   "+$(svgDoc).find("#text15363 tspan tspan:eq(6)")[0].innerHTML;
@@ -291,7 +297,7 @@ blabla
 							$(svgDoc).find("#hide-encoding").toggle();
 							console.log("in hideencodingbutton");	
 					    });
-						});
+});
 					</script>
 					<!---<svg width=400px height=300px xmlns="http://www.w3.org/2000/svg" src="images/simplernngatto.svg"></svg>
 					<!--<video autoplay="true" style="float: left; width: 50%;" src="images/test1.mp4" controls="true"></video> <video style="float: right; width: 20%;" src="images/test1.mp4" autoplay="true" control="true"></video>-->
@@ -616,8 +622,13 @@ $\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i\color{red}*\color{black}w^{i,j
 				<!---feasibility study--->
 				<section>
 					<!--<h2>MrBrains13 challenge results</h2>-->
-					<h2> MD-LSTM / MD-GRU </h2>
+					<h2> MD-LSTM [1] / MD-GRU </h2>
 					<object type="image/svg+xml" style="width: 100%; height: 100%;"data="dlmiapaper/feasibilityimages.svg"></object>
+					<span style="font-size: 60%"><p>Stollenga, M.F., Byeon, W., Liwicki, M., Schmidhuber, J.: Parallel Multi-
+Dimensional LSTM, With Application to Fast Biomedical Volumetric Image Seg-
+mentation. In: Cortes, C., Lawrence, N.D., Lee, D.D., Sugiyama, M., Garnett,
+R. (eds.) Advances in Neural Information Processing Systems 28, pp. 2998–3006.
+Curran Associates, Inc. (2015)</p></span>
 				</section>
 				<section>
 					<h2> MD-LSTM / MD-GRU </h2>
@@ -628,7 +639,7 @@ $\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i\color{red}*\color{black}w^{i,j
 					<h2> MD-LSTM / MD-GRU </h2>
 					<!--<h2>MrBrains13 challenge results</h2>-->
 					<object type="image/svg+xml" style="width: 100%; height: 100%;"data="dlmiapaper/feasibilityconvergence.svg"></object>
-					<soan style="font-size: 70%">MD-LSTM: 12.8 s / MD-GRU: 9.1 s per iteration</br> (volume of 192 × 192 × 14)</soan>
+					<span style="font-size: 70%">MD-LSTM: 12.8 s / MD-GRU: 9.1 s per iteration</br> (volume of 192 × 192 × 14)</span>
 
 				</section>
 				<!--- mrbrains main study--->
@@ -644,7 +655,9 @@ $\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i\color{red}*\color{black}w^{i,j
 				</section>
 				
 				<section>
-					<img src="images/qm.png" style="height: 80%; -webkit-filter: invert(1); filter: invert(1); border: none; box-shadow: none;" id="javascriptquestionmark"/>
+					<h2>Acknowledgements</h2><br><br>
+					<object type="image/svg+xml" style="width: 30%;" data="images/miac_logo.svg"></object><br>
+					<!--<img src="images/qm.png" style="height: 80%; opacity: 0.2; -webkit-filter: invert(1); filter: invert(1); border: none; box-shadow: none;" id="javascriptquestionmark"/>
 					<script type="text/javascript">
 						document.getElementById("javascriptquestionmark").addEventListener('load',function(){
 						var iter = 0;
@@ -656,7 +669,7 @@ $\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i\color{red}*\color{black}w^{i,j
 						//setInterval(invert,800);
 						invert()
 						});
-					</script>
+					</script>-->
 				</section>
 			</div>
 
