@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.10)  17 OCT 2016 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.10)  19 OCT 2016 10:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -582,7 +582,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 11.
- [1
+
+Overfull \hbox (4.19632pt too wide) in paragraph at lines 11--22
+ [] 
+ []
+
+[1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./mrbrainstable.aux) ) 
 Here is how much of TeX's memory you used:
@@ -598,7 +603,7 @@ sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr9.pfb>
-Output written on mrbrainstable.pdf (1 page, 53033 bytes).
+Output written on mrbrainstable.pdf (1 page, 52680 bytes).
 PDF statistics:
  24 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream
