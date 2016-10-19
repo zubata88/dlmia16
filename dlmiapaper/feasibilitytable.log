@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.10)  17 OCT 2016 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.10)  20 OCT 2016 00:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -530,16 +530,16 @@ or  <return>  to continue without it.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./feasibilitytable.aux) )
  
 Here is how much of TeX's memory you used:
- 2325 strings out of 493013
- 32449 string characters out of 6139316
- 93213 words of memory out of 5000000
- 5844 multiletter control sequences out of 15000+600000
+ 2324 strings out of 493013
+ 32443 string characters out of 6139316
+ 93212 words of memory out of 5000000
+ 5843 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,9n,56p,393b,303s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,9n,56p,249b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on feasibilitytable.pdf (1 page, 30957 bytes).
+Output written on feasibilitytable.pdf (1 page, 24782 bytes).
 PDF statistics:
  16 PDF objects out of 1000 (max. 8388607)
  10 compressed objects within 1 object stream

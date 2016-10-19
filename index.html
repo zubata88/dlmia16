@@ -71,7 +71,7 @@
 			<div class="slides">
 				
 				<section><br/><br/><span style="font-size:80%"><h2>Multi-Dimensional Gated Recurrent Units </br>for the Segmentation of Biomedical 3D-Data</h2></span>
-				<p>Simon Andermatt<sup>1</sup>, Simon Pezold<sup>1</sup>, and Philippe Cattin<sup>1</sup></p><p style="font-size: 80%"><sup>1</sup>Medical Image Analysis Center</p>
+				<p>Simon Andermatt, Simon Pezold, and Philippe Cattin</p><p style="font-size: 80%">Medical Image Analysis Center</p>
 				<br><p style="font-size:80%">2nd Workshop on Deep Learning in Medical Image Analysis in Conjunction with MICCAI 2016</p></section>
 <!--				<section data-markdown>
 					### Contents
@@ -96,14 +96,7 @@
 </div>
 blabla
 				</section>-->
-				<section>
-					<h2>MrBrains13 challenge</h2>
-					
-					<!--<h5>MrBrains13 challenge data</h5>-->
-					<img src="images/objective-topath.svg" id="blaasdf" style="border: none; box-shadow: none;"><!--fallback--></object>
 
-				    <!--<object type="image/svg+xml" data="images/objective.svg" id="blaasdf" style="width: 100%; height:100%;"></object>-->
-				</section>
 				
 				<!--<section data-markdown>
 					### RNN/GRU
@@ -152,9 +145,12 @@ blabla
 						console.log(a);
 						var svgDoc = a.contentDocument;
 						$(svgDoc).click(function(){
+							iteration=-1;
+							next();
 							$('#svg1button').show()
 							$('#svg1resetbutton').show()
 							$('#svg1encodingbutton').show()
+							reset
 							})
 						
 						$(svgDoc).find("#text15363 tspan tspan:eq(4)")[0].innerHTML = "   "+$(svgDoc).find("#text15363 tspan tspan:eq(4)")[0].innerHTML;
@@ -297,6 +293,7 @@ blabla
 							$(svgDoc).find("#hide-encoding").toggle();
 							console.log("in hideencodingbutton");	
 					    });
+
 });
 					</script>
 					<!---<svg width=400px height=300px xmlns="http://www.w3.org/2000/svg" src="images/simplernngatto.svg"></svg>
@@ -603,17 +600,14 @@ $\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i\color{black}\odot\color{black}
 
 				</section>--->
 				<section data-transition="slide">
-					<h4>Convolutional Gated Recurrent Unit (C-GRU)</h4>
+					<h2>Convolutional Gated Recurrent Unit (C-GRU)</h2>
 					<p class="fragment">MD-GRU Layer: 1 C-GRU for each direction & dimension</p>
-					<table><tbody><tr style="display: inline;"><td style="width: 50%; font-size: 50%;"><span style="float: left;">
+					<span style="font-size: 70%;">
 					$r^j = \sigma \left( \sum\limits_i^I (x^i\color{red}*\color{black}w_r^{i,j}) + \sum\limits_k^J ( h_{t-1}^k\color{red}*\color{black}u_r^{k,j} ) \color{red}+b^j_r\color{black}\right),$
  $z^j = \sigma \left( \sum\limits_i^I (x^i\color{red}*\color{black}w_z^{i,j}) + \sum\limits_k^J ( h_{t-1}^k\color{red}*\color{black}u_z^{k,j} ) \color{red}+b^j_z\color{black}\right),$
 $\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i\color{red}*\color{black}w^{i,j}) + \color{red}r^j \odot\color{black} \sum\limits_k^J ( h_{t-1}^k \color{red}*\color{black} u^{k,j} ) \color{red}+b^j\color{black}\right),$
-  $h^j_{t} = z^j\odot h^j_{t-1} + (1-z^j)\odot\tilde{h}^j_{t}.$</span></td><td style="width: 50%;">
-						<object type="image/svg+xml" data="images/cgrunotitle3-topath.svg" id="svgObject5" style="float: left;"><!--fallback--></object>
-						
-					</td></tr></tbody></table>
-
+  $h^j_{t} = z^j\odot h^j_{t-1} + (1-z^j)\odot\tilde{h}^j_{t}.$
+</span>
 				</section>
 				<section>
 					<h2>Network</h2>
@@ -626,6 +620,14 @@ $\tilde{h}^j_t = \phi \left( \sum\limits_i^I (x^i\color{red}*\color{black}w^{i,j
 					</ul>
 				</section>
 				<!---feasibility study--->
+								<section>
+					<h2>MrBrains13 challenge</h2>
+					
+					<!--<h5>MrBrains13 challenge data</h5>-->
+					<img src="images/objective-topath.svg" id="blaasdf" style="border: none; box-shadow: none;"><!--fallback--></object>
+
+				    <!--<object type="image/svg+xml" data="images/objective.svg" id="blaasdf" style="width: 100%; height:100%;"></object>-->
+				</section>
 				<section>
 					<!--<h2>MrBrains13 challenge results</h2>-->
 					<h2> MD-GRU / MD-LSTM [1] </h2>
